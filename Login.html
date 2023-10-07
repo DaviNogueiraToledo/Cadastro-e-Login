@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - SP MEDICAL GROUP</title>
+  <style>
+     body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    .cabecalho {
+      background-color: #3ebcc1;
+      color: #fff;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .logo {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    .titulo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button[type="submit"] {
+      background-color: #3ebcc1;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .mensagem-sucesso {
+      color: green;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .botao-home {
+      background-color: #3ebcc1;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="cabecalho">
+    <img class="logo" src="Logo.png" alt="Logo da Cruz Preta">
+    <span class="titulo">SP MEDICAL GROUP</span>
+  </div>
+
+  <div class="container">
+    <h2>Login</h2>
+    <form id="login-form">
+      <label for="login-email">Seu E-mail:</label>
+      <input type="email" id="login-email" name="login-email" required>
+
+      <label for="login-cpf">Seu CPF:</label>
+      <input type="text" id="login-cpf" name="login-cpf" required>
+
+      <button type="submit">Entrar</button>
+    </form>
+    <div id="login-sucesso" class="mensagem-sucesso"></div>
+    <button id="home-login" class="botao-home">Home</button>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById('login-form');
+    const loginSucesso = document.getElementById('login-sucesso');
+    const homeLoginButton = document.getElementById('home-login');
+
+    loginForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      // Simulação de login bem-sucedido
+      loginSucesso.textContent = 'Login feito com sucesso';
+      loginForm.reset();
+    });
+
+    homeLoginButton.addEventListener('click', function () {
+      window.location.href = 'home.html'; // Redireciona para a página inicial
+    });
+  </script>
+</body>
+</html>

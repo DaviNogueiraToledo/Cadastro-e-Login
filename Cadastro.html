@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro - SP MEDICAL GROUP</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    .cabecalho {
+      background-color: #3ebcc1;
+      color: #fff;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .logo {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    .titulo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button[type="submit"] {
+      background-color: #3ebcc1;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .mensagem-sucesso {
+      color: green;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .botao-home {
+      background-color: #3ebcc1;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="cabecalho">
+    <img class="logo" src="Logo.png" alt="Logo da Cruz Preta">
+    <span class="titulo">SP MEDICAL GROUP</span>
+  </div>
+
+  <div class="container">
+    <h2>Cadastro</h2>
+    <form id="cadastro-form">
+      <label for="nome">Seu Nome:</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="email">Seu E-mail:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="cpf">Seu CPF:</label>
+      <input type="text" id="cpf" name="cpf" required>
+
+      <button type="submit">Cadastrar</button>
+    </form>
+    <div id="cadastro-sucesso" class="mensagem-sucesso"></div>
+    <button id="home-cadastro" class="botao-home">Home</button>
+  </div>
+
+  <script>
+    const cadastroForm = document.getElementById('cadastro-form');
+    const cadastroSucesso = document.getElementById('cadastro-sucesso');
+    const homeCadastroButton = document.getElementById('home-cadastro');
+
+    cadastroForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      // Simulação de cadastro bem-sucedido
+      cadastroSucesso.textContent = 'Cadastro feito com sucesso';
+      cadastroForm.reset();
+    });
+
+    homeCadastroButton.addEventListener('click', function () {
+      window.location.href = 'home.html'; // Redireciona para a página inicial
+    });
+  </script>
+</body>
+</html>
